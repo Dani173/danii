@@ -1,78 +1,113 @@
-<!DOCTYPE html>
-<html lang="en" class="h-100">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="">
-        <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-        <meta name="generator" content="Jekyll v3.8.5">
-        <title>{% block title %}Blog de Xavi{% endblock %}</title>
-        {% block stylesheets %}
-            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-            <link rel="stylesheet" href="{{ asset('css/sticky-footer-navbar.css') }}">
-        {% endblock %}
-    </head>
-    <body class="d-flex flex-column h-100">
-    <header>
-        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-            <a class="navbar-brand" href="#">Blog de Xavi</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    {% if app.user is null %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ path('app_login') }}">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ path('app_register') }}">Register</a>
-                    </li>
-                        {% else %}
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ path('app_logout') }}">Logout</a>
-                        </li>
-                        {% if is_granted("ROLE_ADMIN") %}
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ path('app_admin') }}">Admin</a>
-                            </li>
-                        {% endif %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>CALIDAW</title>
+    <link rel="stylesheet" type="text/css" href="css/css.css">
+    <link href="https://fonts.googleapis.com/css?family=Rationale" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 
-                    {% endif %}
-                </ul>
-                <form class="form-inline mt-2 mt-md-0">
-                    <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                </form>
+</head>
+
+<body>
+<div id="menu">
+    <div id="menui"><p id="logo"><a id="letra-logo" href="#slide-one">CALIDAW</a>
+    </div>
+    <div id="menum"><ul>
+            <li id="focus"><a class="letra-menu separacion" href="#slide-two">Ejercicios</a></li>
+            <li><a class="letra-menu separacion" href="#slide-three">Rutinas</a></li>
+            <li><a class="letra-menu separacion" href="#slide-four">Nutrición</a></li>
+            <li><a class="letra-menu separacion" href="#slide-four">Tienda</a></li>
+        </ul></div>
+    <div id="menud"><button id="login-button" class="inicios">Iniciar Sesión</button>
+        <div class="login-container">
+            <form class="login-form">
+                <input type="text" placeholder="Usuario">
+                <input type="password" placeholder="Contraseña">
+                <input type="submit" value="GO" />
+            </form>
+        </div>
+        <p id="registro">Registrarte</p>
+    </div>
+
+</div>
+</div>
+<div id="section-wrapper">
+
+    <div id="section-wrapper-content">
+
+        <section class="slide slide-one">
+            <div class="bloque1"><p id="titulo">CALISTENIA</p>
+                <p id="subtitulo">COMIENZA TU CAMBIO</p>
+                <p id="texto">Los planes de entrenamiento online serán diseñados de manera personalizada
+                    para cada uno de los que nos pidáis asesoramiento on-line a través de esta web,
+                    siempre con el respaldo de todosnuestros expertos.</p>
+                <p><a href="#" class="myButton">Logra tu Asesoramiento</a></p></div>
+            <div class="bloque2">
+                <img id="imageninicio" src="Imagenes/Asesoramiento-Inicio.jpg" alt="tio" />
             </div>
-        </nav>
-    </header>
-    <main role="main" class="flex-shrink-0">
-        <div class="container">
-            {% block body %}{% endblock %}
 
-        </div>
-    </main>
-    <footer class="footer mt-auto py-3">
-        <div class="container">
-            <span class="text-muted">Blog Xavi 2019.</span>
-        </div>
-    </footer>
+        </section>
 
-    {% block footer %}{% endblock %}
-        {% block javascripts %}
-            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-        {% endblock %}
-    </body>
+        <section class="slide slide-two">
+            <h2>Ejercicios</h2>
+        </section>
+
+        <section class="slide slide-three">
+            <p id="subtitulo" class="espacio">Rutinas de Calistenia por niveles</p>
+            <div class="columnanut"><img class="imgrut" src="Imagenes/Rutina/Principiante.jpg" /></div>
+            <div class="columnanut"><img class="imgrut" src="Imagenes/Rutina/intermedio.png"/></div>
+            <div class="columnanut"><img class="imgrut" src="Imagenes/Rutina/avanzado.jpg" /></div>
+            <div class="columnanut"><p class="blanco letranut">Principiante</p></div>
+            <div class="columnanut"><p class="blanco letranut">Intermedia</p></div>
+            <div class="columnanut"><p class="blanco letranut">Avanzada</p></div>
+        </section>
+
+        <section class="slide slide-four">
+
+            <p id="subtitulo">Mejora tu Nutrición</p>
+            <div class="columnanut"><img class="imgnut" src="Imagenes/Nutricion/why-eat-more-fiber-intro.jpg" /></div>
+            <div class="columnanut"><img class="imgnut" src="Imagenes/Nutricion/fasting-is-good-for-you-intro.jpg"/></div>
+            <div class="columnanut"><img class="imgnut" src="Imagenes/Nutricion/post-pre-workout-intro.jpg" /></div>
+
+            <div class="columnanut"><p class="blanco">¿Necesitamos comer más Fibra?</p></div>
+            <div class="columnanut"><p class="blanco">Ayuno Intermitente</p></div>
+            <div class="columnanut"><p class="blanco">Nutrición Pre y Post Entrenamiento</p></div>
+
+
+
+            <div class="columnanut"><img class="imgnut" src="Imagenes/Nutricion/calories-intro.jpg" /></div>
+            <div class="columnanut"><img class="imgnut" src="Imagenes/Nutricion/drink-more-water-intro.jpg"/></div>
+            <div class="columnanut"><img class="imgnut" src="Imagenes/Nutricion/fitness-and-alcohol-intro.jpg" /></div>
+
+            <div class="columnanut"><p class="blanco">Como contar las calorias</p></div>
+            <div class="columnanut"><p class="blanco">Como beber mas agua</p></div>
+            <div class="columnanut"><p class="blanco">Alcohol y Fitness</p></div>
+        </section>
+
+    </div>
+    <footer><div id="debajo">
+            <ul>
+                <li><a class="letra-footer separacionfooter separacion" href="#slide-two">Facebook</a></li>
+                <li><a class="letra-footer separacion" href="#slide-three">Twitter</a></li>
+                <li><a class="letra-footer separacion" href="#slide-four">Pinterest</a></li>
+                <li><a class="letra-footer separacion" href="#slide-four">Instagram</a></li>
+                <li><a class="letra-footer separacion" href="#slide-four">Youtube</a></li>
+            </ul></div></footer>
+</div>
+
+
+
+<script  src="js/index.js"></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script  src="js/indexx.js"></script>
+
+
+
+
+</body>
+
 </html>
-
-
-
 
 
 
